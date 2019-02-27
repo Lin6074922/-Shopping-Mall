@@ -1,0 +1,33 @@
+
+<!--pages/login/login.wxml-->
+<view class="v d-flex">
+  <view class="m-auto">
+    <button open-type="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" bindgetuserinfo="getUserInfo">获取头像</button>
+    <block wx:else> 
+        <image src='{{userInfo.avatarUrl}}' lazy-load='true' mode='scaleToFill' class='portrait'></image>
+        <view class="d-flex">
+          <text class="m-auto">{{userInfo.nickName}}</text>
+        </view>
+        <!-- <view class="d-flex">
+          <text class="m-auto" bindtap="openSetting">退出授权</text>
+        </view> -->
+    </block>
+  </view>
+</view>
+<view class="card">
+  <view class="card-item d-flex" bindtap='bindViewTap'>
+    <text>现场签到</text>
+  </view>
+  <view class="card-item d-flex">
+    <text>现场签到</text>
+  </view>
+  <view class="card-item d-flex">
+    <text>现场签到</text>
+  </view>
+  <view class="card-item d-flex">
+    <text>现场签到</text>
+  </view>
+  <view class="card-item d-flex">
+    <text>现场签到</text>
+  </view>
+</view>

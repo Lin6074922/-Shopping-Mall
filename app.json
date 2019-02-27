@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Shopping/Shopping",
+    "pages/commodity/commodity",
+    "pages/details/details",
+    "pages/login/login",
+    "pages/classify/classify",
+    "pages/logs/logs",
+    "pages/sign/sign"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "签到DEMO",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/img/icon_b/shouye-xianxing.png",
+        "selectedIconPath": "pages/img/icon_r/shouye.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "pages/img/icon_b/classify.png",
+        "selectedIconPath": "pages/img/icon_r/classify.png"
+      },
+      {
+        "pagePath": "pages/Shopping/Shopping",
+        "text": "购物车",
+        "iconPath": "pages/img/icon_details/publishgoods_fill.png",
+        "selectedIconPath": "pages/img/icon_details/publish goods_fill.png"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "个人中心",
+        "iconPath": "pages/img/icon_b/addressbook.png",
+        "selectedIconPath": "pages/img/icon_r/addressbook_fill.png"
+      }
+    ]
+  }
+}

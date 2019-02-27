@@ -1,0 +1,98 @@
+/* pages/classify/classify.wxss */
+/* 固定定位 */
+
+/* 搜索框 */
+.white{
+  background: white;
+  width: 100%;
+}
+.search{
+  width: 95%;
+  height: 50rpx;
+  margin:15rpx 20rpx;
+  margin-right: 20rpx;
+  border-radius: 15rpx;
+  border-bottom: 1rpx solid #999;
+  background: #f5f5f5;
+}
+.search>view{
+  width: 50rpx;
+  height: 50rpx;
+
+}
+.search view image{
+  margin: 0 10rpx;
+  width: 50%;
+  height: 50%;
+}
+.search input{
+  width: 100%;
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  /* background: #f5f5f5; */
+  /* border: 1rpx solid #0f0; */
+}
+/* 分类 */
+.classify {
+  width:20%;
+  height: 92.8vh;
+  background: #f5f5f5;
+  margin-top: 80rpx;
+}
+.classify text{
+  /* width: 100%; */
+  display: block;
+  text-align: center;
+  padding:25rpx 0;
+  /* margin: 0 30rpx; */
+  font-size: 22rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.click{
+  border-left: 10rpx solid rgba(230, 86, 2, 0.918);
+  background: #fff;
+}
+/* 商品 */
+.wares{
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 80rpx;
+  margin-left: 150rpx;
+}
+.wares>view{
+  height: 480rpx;
+  margin-bottom: 20rpx;
+  border: 1rpx solid #ddd;
+}
+.wares>view:nth-child(2n){
+  margin-left: 20rpx;
+}
+.wares>view view:first-child{
+  width: 270rpx;
+  height: 250rpx;
+  /* background: #f5f; */
+}
+.wares image{
+  width: 100%;
+  height: 100%;
+}
+.wares>view text:first-child{
+  width: 250rpx;
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+.wares>view text{
+ display: block;
+ font-size: 24rpx; 
+ margin-bottom: 10rpx;
+}
+.wares>view text:last-child{
+  font-size: 34rpx;
+  /* 字体粗细：取值100至900，正常500，粗体blod:700 */
+  font-weight: 700;
+}

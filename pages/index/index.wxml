@@ -1,0 +1,48 @@
+<!--index.wxml-->
+
+<swiper autoplay='true' indicator-dots='true' indicator-active-color='#0f0' indicator-color='#ddd' class="swiper">
+  <swiper-item>
+    <image lazy-load='true' mode='aspectFill' src='../img/a5.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image lazy-load='true' mode='aspectFill' src='../img/a6.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image lazy-load='true' mode='aspectFill' src='../img/a7.jpg'></image>
+  </swiper-item>
+</swiper>
+<view>
+  <button open-type='getUserInfo' bindgetuserinfo='getUserInfo'>搜索</button>
+</view>
+<!-- 导航 -->
+<view class="d-flex icon">
+  <view wx:for="{{categories}}"  wx:if="{{item.parentID==0}}"  wx:key="{{index}}" data-id='{{item.id}}' bindtap='getCommodity'>
+    <view>
+      <!-- <image src='{{item.img}}' lazy-load='true'></image> -->
+      <text  class='iconfont {{item.otherJson}}'></text>
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+<!-- 商品 -->
+<view class="commodity">
+
+  <!-- 引入商品模块 -->
+  <import src='../commodity-item/commodity.wxml' />
+
+  <!-- 循环用商品模块 -->
+  <!-- <template is="commodity-item" wx:key="{{循环数据}}" wx:key="{{index}}" data={{item}}></template > -->
+
+<!-- 以注释为基础进行循环 -->
+  <!-- <view class='d-flex' >
+    <image lazy-load='true' src="../img/a5.jpg"></image>
+    <view>
+      <text>商品名称1111111111111111111111</text>
+      <view class="d-flex">
+        <text>￥1750000.00</text>
+        <text>销量:350</text>
+      </view>
+    </view>
+  </view> -->
+  
+</view>

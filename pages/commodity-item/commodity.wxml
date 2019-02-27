@@ -1,0 +1,28 @@
+<template name="commodity-item">
+<!-- 商品列表模板 -->
+  <!-- <navigator url="../details/details?data={{item}}" open-type='navigate'> -->
+    <view bindtap='jumpDetails' data-index="{{index}}">
+      <image lazy-load='true' src="../img/a5.jpg"></image>
+      <view>
+        <text>{{item.description}}</text>
+        <view class="d-flex">
+          <text>￥{{item.unitPrice}}</text>
+          <text>销量:{{item.stock}}</text>
+        </view>
+      </view>
+    </view>
+  <!-- </navigator> -->
+</template>
+
+<!-- 选择商品数量 -->
+<template name="number">
+  <view class='d-flex number'>
+    <text data-cal="-1" bindtap='calCulation' data-index="{{index}}">-</text>
+    <!-- <input value='1'></input> -->
+    <!-- 滑动选择数量 -->
+    <picker bindchange='bindPickerChange' data-index="{{index}}" value='{{item===undefined?number:item.number}}' range="{{array}}">
+      <view class='slide'>{{array[item===undefined?number:item.number]}}</view>
+    </picker>
+    <text data-cal="1" bindtap='calCulation' data-index="{{index}}">+</text>
+  </view>
+</template>

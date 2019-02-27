@@ -1,0 +1,43 @@
+<!--pages/Shopping/Shopping.wxml-->
+
+<!-- 引用模块 -->
+<import src='../commodity-item/commodity.wxml' />
+
+
+
+<view class='lastButtom'>
+  <!-- 购物车列表 -->
+  <view class='shopping d-flex' wx:for="{{shopping}}" wx:key="{{index}}">
+    <!-- 选中图标 -->
+    <icon  type='{{item.state?"success":"circle"}}' data-index="{{index}}" bindtap='state'></icon>
+    <!-- <icon  type='circle'></icon> -->
+
+    <image lazy-load='true' src='../img/a5.jpg'></image>
+  <!-- 商品信息 -->
+    <view>
+    <!-- 商品名称 -->
+      <text>{{item.details}}</text>
+      <view class='d-flex'>
+        <text>￥{{item.number*item.price}}</text>
+        <!-- 选择数量模板 -->
+        <template is="number" data="{{array,item,index}}"></template >
+        <!-- <view class='d-flex number'>
+          <text data-cal="-1" bindtap='calCulation'>-</text>
+          <picker bindchange='bindPickerChange' value='{{index}}' range="{{array}}">
+            <view class='slide'>{{array[index]}}</view>
+          </picker>
+          <text data-cal="1" bindtap='calCulation'>+</text>
+        </view> -->
+        <icon type='clear' size='20' bindtap='deLete' data-index="{{index}}"></icon>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 底部固定结算和总价栏 -->
+<view class='settlement d-flex'>
+  <view>
+    <icon type='{{allElection?"success":"circle"}}' bindtap='allElection'></icon>
+    <text>￥：{{total}}</text>
+  </view>
+  <button type='warn'>结算</button>
+</view>

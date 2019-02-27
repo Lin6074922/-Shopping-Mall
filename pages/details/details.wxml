@@ -1,0 +1,138 @@
+<!--pages/details/details.wxml-->
+<!-- 引入模板 -->
+<import src='../commodity-item/commodity.wxml' />
+
+<!-- 轮播图 -->
+<swiper indicator-dots='true' indicator-color='#333' indicator-active-color='#f5f5f5' circular='true' class='swiper'>
+  <swiper-item>
+    <image src='../img/a5.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image src='../img/a5.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image src='../img/a5.jpg'></image>
+  </swiper-item>
+</swiper>
+
+<!-- 底部固定导航栏 -->
+<view class='buttonNav d-flex buck'>
+  <view class='d-flex'>
+    <view >
+      <!-- <image src='../img/icon_details/homepage.png'></image> -->
+      <navigator url="../index/index" open-type='switchTab'>
+        <text class='iconfont icon-homepage'></text>
+        <text>首页</text>
+      </navigator>
+    </view>
+    <view>
+      <text class='iconfont icon-customerservice'></text>
+      <text>客服</text>
+    </view>
+    <view>
+      <text class='iconfont {{collection ? "icon-collection_fill" : "icon-collection"}}' bindtap='targetCollection'></text>
+      <text>收藏</text>
+    </view>
+  </view>
+  <!-- 购物车与购买 -->
+  <view class='d-flex'>
+    <view bindtap='showModal'>
+      <text class='iconfont icon-publishgoods_fill'></text>
+      <text>加入购物车</text>
+    </view>
+    <view>
+      <text class='iconfont icon-financial_fill'></text>
+      <text>立即购买</text>
+    </view>
+  </view>
+</view>
+
+<!-- 商品名称与价格 -->
+<view class='detailsName d-flex'>
+  <text>{{details.description}}</text>
+  <view class='d-flex'>
+    <text>价格:￥{{details.unitPrice}}</text>
+    <view class='d-flex'>
+      <text>销量:{{details.stock}}</text>
+      <!-- 分享 -->
+      <button class="iconfont icon-fenxiang share" open-type='share' ></button>
+    </view>
+  </view>
+</view>
+
+<!-- 图文详情与评价切换 -->
+<view class='switch d-flex'>
+  <text data-id='0' bindtap='swiTch' class="{{_num==0?'redSize':''}}">图文详情</text>
+  <text data-id='1' bindtap='swiTch' class="{{_num==1?'redSize':''}}">评价</text>
+</view>
+
+<!-- 图文详情 -->
+<view class='details' hidden='{{_num==1}}'>
+  <text>
+    商品详细信息与介绍商品详细信息与介绍商品详细信息与介绍商品详细信息与介绍商品详细信息与介绍
+  </text>
+  <!-- 商品图片 -->
+  <view>
+    <image lazy-load='true' src='../img/a6.jpg'></image>
+  </view>
+  <view>
+    <image lazy-load='true' src='../img/a6.jpg'></image>
+  </view>
+  <view>
+    <image lazy-load='true' src='../img/a6.jpg'></image>
+  </view>
+  <view>
+    <image lazy-load='true' src='../img/a6.jpg'></image>
+  </view>
+  <view>
+    <image lazy-load='true' src='../img/a6.jpg'></image>
+  </view>
+  <view>
+    <image lazy-load='true' src='../img/a6.jpg'></image>
+  </view>
+</view>
+
+<!-- 评论 -->
+<view  hidden='{{_num==0}}'>
+  <view class='nothing' wx:if="{{comment==null}}">
+    <text>暂无评论</text>
+  </view>
+  <!-- 有评论 -->
+  <view wx:else class="comment">
+    <view wx:for="{{comment}}" wx:key='{{item.id}}'>
+    <!-- 名字和日期 -->
+      <view class='d-flex'>
+        <text>{{item.name}}</text>
+        <text>{{item.time}}</text>
+      </view>
+    <!-- 评论主体 -->
+      <view class='d-flex'>
+        <text>#{{item.id}}</text>
+        <text>{{item.text}}</text>
+      </view>
+    </view>    
+  </view>
+</view>
+
+<!-- 购物车背景 -->
+<view class='block' wx:if="{{anima}}" >
+  <view bindtap='hideModal' animation="{{animationData}}"></view>
+</view>
+<!-- 购物车和购买自定义提示框 -->
+<view class='anima' wx:if="{{anima}}" animation="{{animationData}}">
+  <!-- 商品名称 -->
+  <text>{{details.description}}</text>
+  <!-- 规格 -->
+  <view class='d-flex'>
+    <view wx:for="{{model}}" wx:key="{{index}}"  data-id='{{index}}'  class='{{_nun==index?"size":""}}' bindtap='selectModel'>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <!-- 选择数量模板 -->
+    <template is="number" data="{{array,number,item}}"></template >
+  <!-- 总价 -->
+  <view >
+    <text>总价:￥{{price}}</text>
+    <button size='mini' type='warn' bindtap='setStorage'>确定</button>
+  </view>
+</view>

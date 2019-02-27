@@ -1,0 +1,141 @@
+<!--pages/classify/classify.wxml-->
+<!-- 搜索 -->
+<view class="white buck">
+  <view class="d-flex search ">
+    <view>
+      <image src='../img/zoom-out.png' lazy-load='true'></image>
+    </view>
+    <input placeholder='请输入搜索内容'  disabled="true"></input>
+  </view>
+</view>
+<!-- 分类 -->
+  <!-- 左侧导航 -->
+<view class="d-flex ">
+  <view class='classify buck'>
+    <text data-id="{{item.id}}" bindtap='getClassify' wx:for="{{classify}}" wx:key="{{item.id}}" class="{{_num==item.id?'click':''}}      ">{{item.name}}</text>
+  </view>
+  <!-- 右侧商品 -->
+  <view class="wares d-flex">
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    <view>
+    <!-- 图片 -->
+      <view>
+        <image src='../img/a5.jpg'></image>
+      </view>
+    <!-- 商品信息 -->
+      <view>
+        <text>商品名称111111111111111111111111111111111111111111111111111</text>
+        <text>销量</text>
+        <text>原价</text>
+        <text class="redSize">现价</text>
+      </view>
+    </view>
+    
+    
+  </view>
+  
+</view>
